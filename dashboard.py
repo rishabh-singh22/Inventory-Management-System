@@ -2,6 +2,7 @@
 from tkinter import*
 from PIL import Image,ImageTk   #pip install pillow for images
 from employee import employeeClass
+from supplier import supllierClass
 
 class Inventory:
     def __init__(self,root):
@@ -38,7 +39,7 @@ class Inventory:
         lbl_menu=Label(LeftMenu, text="Menu" , font=("times new roman", 20), bg="#009688").pack(side=TOP,fill=X)
         
         btn_employee=Button(LeftMenu, text="Employee", image=self.icon_side, command=self.employee, compound=LEFT,padx=20,font=("times new roman", 20),anchor="w",bd=3,cursor="hand2", bg="white").pack(side=TOP,fill=X)
-        btn_suppliers=Button(LeftMenu, text="Supplier", image=self.icon_side, compound=LEFT,padx=20,font=("times new roman", 20),anchor="w",bd=3,cursor="hand2", bg="white").pack(side=TOP,fill=X)
+        btn_suppliers=Button(LeftMenu, text="Supplier", image=self.icon_side,command=self.supplier ,compound=LEFT,padx=20,font=("times new roman", 20),anchor="w",bd=3,cursor="hand2", bg="white").pack(side=TOP,fill=X)
         btn_category=Button(LeftMenu, text="Category", image=self.icon_side, compound=LEFT,padx=20,font=("times new roman", 20),anchor="w",bd=3,cursor="hand2", bg="white").pack(side=TOP,fill=X)
         btn_product=Button(LeftMenu, text="Product", image=self.icon_side, compound=LEFT,padx=20,font=("times new roman", 20),anchor="w",bd=3,cursor="hand2", bg="white").pack(side=TOP,fill=X)
         btn_sales=Button(LeftMenu, text="Sales", image=self.icon_side, compound=LEFT,padx=20,font=("times new roman", 20),anchor="w",bd=3,cursor="hand2", bg="white").pack(side=TOP,fill=X)
@@ -69,7 +70,11 @@ class Inventory:
     #==========================================================================================================
     def employee(self):
         self.new_win = Toplevel(self.root)
-        self.new_obj = employeeClass(self.new_win)  
+        self.new_obj = employeeClass(self.new_win)
+
+    def supplier(self):
+        self.new_win = Toplevel(self.root)
+        self.new_obj = supllierClass(self.new_win)  
 
 
 if __name__=="__main__":
