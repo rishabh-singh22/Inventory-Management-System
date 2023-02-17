@@ -2,7 +2,9 @@
 from tkinter import*
 from PIL import Image,ImageTk   #pip install pillow for images
 from employee import employeeClass
-from supplier import supllierClass
+from supplier import supplierClass
+from category import categoryClass
+
 
 class Inventory:
     def __init__(self,root):
