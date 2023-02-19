@@ -42,7 +42,7 @@ class Inventory:
         
         btn_employee=Button(LeftMenu, text="Employee", image=self.icon_side, command=self.employee, compound=LEFT,padx=20,font=("times new roman", 20),anchor="w",bd=3,cursor="hand2", bg="white").pack(side=TOP,fill=X)
         btn_suppliers=Button(LeftMenu, text="Supplier", image=self.icon_side,command=self.supplier ,compound=LEFT,padx=20,font=("times new roman", 20),anchor="w",bd=3,cursor="hand2", bg="white").pack(side=TOP,fill=X)
-        btn_category=Button(LeftMenu, text="Category", image=self.icon_side, compound=LEFT,padx=20,font=("times new roman", 20),anchor="w",bd=3,cursor="hand2", bg="white").pack(side=TOP,fill=X)
+        btn_category=Button(LeftMenu, text="Category", image=self.icon_side, command=self.category,compound=LEFT,padx=20,font=("times new roman", 20),anchor="w",bd=3,cursor="hand2", bg="white").pack(side=TOP,fill=X)
         btn_product=Button(LeftMenu, text="Product", image=self.icon_side, compound=LEFT,padx=20,font=("times new roman", 20),anchor="w",bd=3,cursor="hand2", bg="white").pack(side=TOP,fill=X)
         btn_sales=Button(LeftMenu, text="Sales", image=self.icon_side, compound=LEFT,padx=20,font=("times new roman", 20),anchor="w",bd=3,cursor="hand2", bg="white").pack(side=TOP,fill=X)
         btn_exit=Button(LeftMenu, text="Exit", image=self.icon_side, compound=LEFT,padx=20,font=("times new roman", 20),anchor="w",bd=3,cursor="hand2" ,bg="white").pack(side=TOP,fill=X)
@@ -76,8 +76,11 @@ class Inventory:
 
     def supplier(self):
         self.new_win = Toplevel(self.root)
-        self.new_obj = supllierClass(self.new_win)  
+        self.new_obj = supplierClass(self.new_win)  
 
+    def category(self):
+        self.new_win = Toplevel(self.root)
+        self.new_obj = categoryClass(self.new_win)  
 
 if __name__=="__main__":
     root = Tk()
