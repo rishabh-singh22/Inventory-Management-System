@@ -161,7 +161,7 @@ class supplierClass:
                 if row==None:
                     messagebox.showerror("Error","Invalid Supplier Invoice",parent=self.root)
                 else:
-                    cur.execute("Update supplier set name=?,contact=?,description=?, where invoice=?",(
+                    cur.execute("Update supplier set name=?,contact=?,description=? where invoice=?",(
                                         self.var_name.get(),
                                         self.var_contact.get(),
                                         self.txt_description.get('1.0',END),
@@ -190,7 +190,7 @@ class supplierClass:
                 else:
                     op=messagebox.askyesno("Confirm","Do you really want to delete?",parent=self.root)
                     if op==True:
-                        cur.execute("delete from employee where invoice=?",(self.var_sup_invoice.get(),))
+                        cur.execute("delete from supplier where invoice=?",(self.var_sup_invoice.get(),))
                         con.commit()
                         messagebox.showinfo("Delete","Supplier Deleted Successfuly",parent=self.root)
                         self.clear()
