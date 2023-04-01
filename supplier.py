@@ -189,7 +189,7 @@ class supplierClass:
                     messagebox.showerror("Error","Invalid Supplier Invoice",parent=self.root)
                 else:
                     op=messagebox.askyesno("Confirm","Do you really want to delete?",parent=self.root)
-                    if op==True:
+                    if op==True: 
                         cur.execute("delete from supplier where invoice=?",(self.var_sup_invoice.get(),))
                         con.commit()
                         messagebox.showinfo("Delete","Supplier Deleted Successfuly",parent=self.root)
