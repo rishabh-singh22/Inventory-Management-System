@@ -261,7 +261,7 @@ class productClass:
                 messagebox.showerror("Error","Search input Should Be Required",parent=self.root)
             
             else:
-                cur.execute("Select * from product where "+ self.var_searchby.get()+" LIKE '%"+self.var_searchText.get()+"%'")
+                cur.execute("Select * from product where "+self.var_searchby.get()+" LIKE '%"+self.var_searchText.get()+" %'")
                 rows=cur.fetchall()
                 if len(rows)!=0:
                    self.product_table.delete(*self.product_table.get_children())

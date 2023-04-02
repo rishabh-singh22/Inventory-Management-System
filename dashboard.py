@@ -5,6 +5,7 @@ from employee import employeeClass
 from supplier import supplierClass
 from category import categoryClass
 from product import productClass
+from sales import salesClass
 
 class Inventory:
     def __init__(self,root):
@@ -45,7 +46,7 @@ class Inventory:
         btn_category=Button(LeftMenu, text="Category", image=self.icon_side, command=self.category,compound=LEFT,padx=20,font=("times new roman", 20),anchor="w",bd=3,cursor="hand2", bg="white").pack(side=TOP,fill=X)
         btn_product=Button(LeftMenu, text="Product",command=self.product, image=self.icon_side, compound=LEFT,padx=20,font=("times new roman", 20),anchor="w",bd=3,cursor="hand2", bg="white").pack(side=TOP,fill=X)
         btn_sales=Button(LeftMenu, text="Sales", image=self.icon_side, compound=LEFT,padx=20,font=("times new roman", 20),anchor="w",bd=3,cursor="hand2", bg="white").pack(side=TOP,fill=X)
-        btn_exit=Button(LeftMenu, text="Exit", image=self.icon_side, compound=LEFT,padx=20,font=("times new roman", 20),anchor="w",bd=3,cursor="hand2" ,bg="white").pack(side=TOP,fill=X)
+        btn_exit=Button(LeftMenu, text="Exit", image=self.icon_side,command=self.sales, compound=LEFT,padx=20,font=("times new roman", 20),anchor="w",bd=3,cursor="hand2" ,bg="white").pack(side=TOP,fill=X)
 
         #===== Content===
 
@@ -85,6 +86,10 @@ class Inventory:
     def product(self):
         self.new_win = Toplevel(self.root)
         self.new_obj = productClass(self.new_win)  
+
+    def sales(self):
+        self.new_win = Toplevel(self.root)
+        self.new_obj = salesClass(self.new_win)  
 
 if __name__=="__main__":
     root = Tk()

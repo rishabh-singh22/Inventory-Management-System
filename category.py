@@ -146,9 +146,6 @@ class categoryClass:
         self.var_name.set(row[1]),
 
 
-        
-
-
 
 
 if __name__=="__main__":
